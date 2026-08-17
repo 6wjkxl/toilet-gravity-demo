@@ -1,0 +1,23 @@
+:root {
+  --ink: #1f2552;
+  --ink-soft: #363b68;
+  --orbit: #5b54d8;
+  --orbit-soft: #e5e2ff;
+  --action: #ff6b43;
+  --action-dark: #d94b28;
+  --warm: #fff8d7;
+  --warm-deep: #ffed9b;
+  --open: #16845b;
+  --uncertain: #9a5d16;
+  --closed: #b33a3a;
+  --paper: #ffffff;
+  --surface: #fffdf4;
+  --muted: #666b88;
+  --line: #dedfd8;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.125rem;
+  --radius-lg: 1.75rem;
+  --shadow: 0 1rem 2.5rem rgba(31, 37, 82, 0.12);
+  --content: 75rem;
+}
+

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>厕所详情｜厕有引力</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/detail.css">
+  <script type="module" src="scripts/detail.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header page-shell">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>厕有引力</span></a>
+    <a class="city-chip" href="index.html">返回附近厕所</a>
+  </header>
+  <div class="demo-banner" role="note">演示地点 · 不可用于真实导航</div>
+
+  <main id="main" class="detail-layout page-shell">
+    <article id="detail-root" class="detail-main" aria-live="polite">
+      <p>正在读取演示地点…</p>
+    </article>
+
+    <aside class="review-panel" aria-labelledby="reviews-title">
+      <p class="eyebrow">仅存此浏览器</p>
+      <h2 id="reviews-title">写下演示评价</h2>
+      <p class="review-note">演示评价只保存在你当前使用的浏览器里，开发者和其他用户都看不到；清除浏览器数据后会消失。</p>
+      <form id="review-form">
+        <div class="rating-grid">
+          <label>综合评分<select name="overallRating" required><option value="5">5 分</option><option value="4">4 分</option><option value="3">3 分</option><option value="2">2 分</option><option value="1">1 分</option></select></label>
+          <label>卫生<select name="cleanlinessRating" required><option value="5">5 分</option><option value="4">4 分</option><option value="3">3 分</option><option value="2">2 分</option><option value="1">1 分</option></select></label>
+          <label>好找程度<select name="findabilityRating" required><option value="5">5 分</option><option value="4">4 分</option><option value="3">3 分</option><option value="2">2 分</option><option value="1">1 分</option></select></label>
+          <label>设施体验<select name="facilityRating" required><option value="5">5 分</option><option value="4">4 分</option><option value="3">3 分</option><option value="2">2 分</option><option value="1">1 分</option></select></label>
+        </div>
+        <label>短评<textarea name="content" maxlength="300" rows="5" placeholder="入口是否好找？设施体验如何？"></textarea></label>
+        <div class="review-form-actions">
+          <button id="save-review" class="button button--dark" type="submit">保存到此浏览器</button>
+          <button id="cancel-edit" class="button button--secondary" type="button" hidden>取消修改</button>
+        </div>
+      </form>
+      <p id="review-status" role="status"></p>
+      <section class="reviews-section" aria-labelledby="review-list-title">
+        <h3 id="review-list-title">这个地点的演示评价</h3>
+        <div id="review-list" aria-live="polite"></div>
+      </section>
+    </aside>
+  </main>
+</body>
+</html>

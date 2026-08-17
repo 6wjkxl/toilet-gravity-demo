@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="厕有引力：沙市中心区公共厕所查询网站演示。">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>厕有引力｜沙市中心区演示</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <script type="module" src="scripts/home.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header page-shell">
+    <a class="brand" href="index.html" aria-label="厕有引力首页">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>厕有引力</span>
+    </a>
+    <nav class="site-nav" aria-label="主要导航">
+      <a href="#nearby">附近厕所</a>
+      <a href="#ranking">沙市厕榜</a>
+      <a href="about.html">关于项目</a>
+    </nav>
+    <span class="city-chip">沙市中心区</span>
+  </header>
+
+  <div class="demo-banner" role="note">公开体验版 · 8 个地点均为演示数据，不可用于真实导航</div>
+
+  <main id="main" class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">荆州 · 沙市中心区</p>
+        <h1 id="hero-title">最近可用，就在 <em>3 分钟</em>外。</h1>
+        <p class="hero-lead">位置、入口、开放状态一次看清。别急，引力已经找到方向。</p>
+        <div class="location-card">
+          <div>
+            <p class="location-label">当前位置</p>
+            <p id="location-status" class="location-value" role="status">沙市中心区默认位置</p>
+          </div>
+          <button id="locate-button" class="button button--primary" type="button">使用当前位置</button>
+        </div>
+      </div>
+
+      <div id="demo-map" class="demo-map" aria-label="沙市中心区演示地图">
+        <p class="map-note">示意图 · 不是真实地图</p>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <section id="nearby" aria-labelledby="nearby-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">按演示距离排序</p>
+            <h2 id="nearby-title">离你最近</h2>
+          </div>
+          <p id="result-summary" role="status">正在整理演示地点…</p>
+        </div>
+
+        <form id="filters" class="filter-panel" role="search">
+          <label class="filter-search" for="search-input">
+            <span>搜索地点或入口</span>
+            <input id="search-input" type="search" autocomplete="off" placeholder="例如：北门、广场">
+          </label>
+          <label for="status-filter">
+            <span>开放状态</span>
+            <select id="status-filter">
+              <option value="all">全部状态</option>
+              <option value="open">只看开放</option>
+              <option value="uncertain">待确认</option>
+              <option value="closed">暂时关闭</option>
+            </select>
+          </label>
+          <fieldset>
+            <legend>需要的设施</legend>
+            <label><input type="checkbox" name="facility" value="accessible">无障碍</label>
+            <label><input type="checkbox" name="facility" value="family">亲子设施</label>
+            <label><input type="checkbox" name="facility" value="toilet-paper">提供厕纸</label>
+          </fieldset>
+          <button class="button filter-reset" type="reset">清除筛选</button>
+        </form>
+
+        <div id="toilet-list" aria-live="polite"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <p class="eyebrow">引力暂时失联</p>
+          <h3>没有符合这些条件的演示地点</h3>
+          <p>可以减少设施条件，或换一个入口关键词。</p>
+          <button id="clear-filters" class="button button--primary" type="button">清除筛选</button>
+        </div>
+      </section>
+
+      <aside id="ranking" class="ranking-card" aria-labelledby="ranking-title">
+        <p class="eyebrow">可信综合榜 · 演示排名</p>
+        <h2 id="ranking-title">沙市厕榜</h2>
+        <p>排名考虑评分、评价数量、确认时间和资料完整度。</p>
+        <ol id="ranking-list" class="ranking-list">
+          <li><strong>中心广场便民卫生间</strong><small>评价充分 · 近期确认</small></li>
+          <li><strong>便河公园公共卫生间</strong><small>入口清晰 · 资料完整</small></li>
+          <li><strong>北京中路公共卫生间</strong><small>状态稳定 · 设施完整</small></li>
+        </ol>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer page-shell">
+    <p>厕有引力公开体验版 · 所有地点均为演示数据</p>
+    <a href="about.html">查看演示说明与隐私原则</a>
+  </footer>
+
+  <noscript>请启用 JavaScript 以使用厕所查询功能。</noscript>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>帮忙纠正信息｜厕有引力</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/correction.css">
+  <script type="module" src="scripts/correction.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header page-shell">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>厕有引力</span></a>
+    <a id="back-to-detail" class="city-chip" href="index.html">返回厕所详情</a>
+  </header>
+  <div class="demo-banner" role="note">本地流程演示 · 只存在当前浏览器，不会上传或修改厕所资料</div>
+
+  <main id="main" class="correction-layout page-shell">
+    <section id="correction-intro" class="correction-intro" aria-labelledby="page-title">
+      <p class="eyebrow">帮资料离正确更近一点</p>
+      <h1 id="page-title">发现信息不对？<br>告诉我们。</h1>
+      <p id="toilet-name" class="selected-place">正在读取演示地点…</p>
+      <div class="privacy-note" role="note">
+        <strong>不要填写个人隐私</strong>
+        <p>不需要姓名、电话、照片、实时位置、家庭或学校信息。</p>
+        <p>内容只保存在你当前使用的浏览器里，开发者和其他用户都看不到。</p>
+      </div>
+    </section>
+
+    <section id="correction-workspace" class="correction-workspace" aria-labelledby="form-title">
+      <form id="correction-form">
+        <div class="form-heading">
+          <span class="step-mark" aria-hidden="true">1</span>
+          <div>
+            <p class="eyebrow">先选一项</p>
+            <h2 id="form-title">哪里不对？</h2>
+          </div>
+        </div>
+
+        <fieldset class="category-grid">
+          <legend class="visually-hidden">选择要纠正的信息</legend>
+          <label><input type="radio" name="category" value="availability" required><span>厕所状态</span></label>
+          <label><input type="radio" name="category" value="opening-hours"><span>开放时间</span></label>
+          <label><input type="radio" name="category" value="entrance"><span>入口说明</span></label>
+          <label><input type="radio" name="category" value="fee"><span>收费情况</span></label>
+          <label><input type="radio" name="category" value="facilities"><span>设施信息</span></label>
+          <label><input type="radio" name="category" value="other"><span>其他问题</span></label>
+        </fieldset>
+
+        <div id="category-fields" aria-live="polite">
+          <section class="category-section" data-category-section="availability" hidden>
+            <label>现在是什么状态？
+              <select name="availabilityState" required disabled>
+                <option value="">请选择</option>
+                <option value="open">可以正常使用</option>
+                <option value="temporarily-unavailable">暂时无法使用</option>
+                <option value="removed">已关闭或拆除</option>
+                <option value="uncertain">不确定</option>
+              </select>
+            </label>
+          </section>
+
+          <section class="category-section" data-category-section="opening-hours" hidden>
+            <label>新的开放时间
+              <input name="openingHours" maxlength="120" placeholder="例如：07:00–22:00，或不确定" required disabled>
+            </label>
+          </section>
+
+          <section class="category-section" data-category-section="entrance" hidden>
+            <label>正确的入口说明
+              <textarea name="entranceDescription" maxlength="200" rows="4" placeholder="从哪里进入，路上有什么明显标志？" required disabled></textarea>
+            </label>
+          </section>
+
+          <section class="category-section" data-category-section="fee" hidden>
+            <label>现在的收费情况
+              <select name="feeType" required disabled>
+                <option value="">请选择</option>
+                <option value="free">免费</option>
+                <option value="paid">需要收费</option>
+                <option value="uncertain">不确定</option>
+              </select>
+            </label>
+            <label>金额或收费说明（可不填）
+              <input name="feeAmount" maxlength="50" placeholder="例如：每次1元" disabled>
+            </label>
+          </section>
+
+          <section class="category-section" data-category-section="facilities" hidden>
+            <p class="field-help">只选择你确认发生变化的设施，其他项保持“未选择”。</p>
+            <div class="facility-correction-grid">
+              <label>洗手池<select name="facilityHandWash" disabled><option value="">未选择</option><option value="present">有</option><option value="absent">没有</option><option value="uncertain">不确定</option></select></label>
+              <label>厕纸<select name="facilityToiletPaper" disabled><option value="">未选择</option><option value="present">有</option><option value="absent">没有</option><option value="uncertain">不确定</option></select></label>
+              <label>坐便位<select name="facilitySeated" disabled><option value="">未选择</option><option value="present">有</option><option value="absent">没有</option><option value="uncertain">不确定</option></select></label>
+              <label>无障碍设施<select name="facilityAccessible" disabled><option value="">未选择</option><option value="present">有</option><option value="absent">没有</option><option value="uncertain">不确定</option></select></label>
+              <label>亲子设施<select name="facilityFamily" disabled><option value="">未选择</option><option value="present">有</option><option value="absent">没有</option><option value="uncertain">不确定</option></select></label>
+            </div>
+          </section>
+
+          <section class="category-section" data-category-section="other" hidden>
+            <label>请说明问题
+              <textarea name="otherDescription" maxlength="300" rows="4" placeholder="只写与这个厕所资料有关的内容" required disabled></textarea>
+            </label>
+          </section>
+        </div>
+
+        <div class="form-heading form-heading--second">
+          <span class="step-mark" aria-hidden="true">2</span>
+          <div>
+            <p class="eyebrow">可选</p>
+            <h2>再补充一句</h2>
+          </div>
+        </div>
+        <label class="note-field">补充说明
+          <textarea name="note" maxlength="300" rows="4" placeholder="例如：信息来自现场告示牌。不要填写个人信息。"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button id="save-correction" class="button button--primary" type="submit">保存本地演示提交</button>
+          <button id="cancel-edit" class="button button--secondary" type="button" hidden>取消修改</button>
+        </div>
+        <p id="form-status" class="message" role="status"></p>
+      </form>
+
+      <section class="my-submissions" aria-labelledby="submissions-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">只存在此浏览器</p>
+            <h2 id="submissions-title">我的提交</h2>
+          </div>
+          <span id="submission-count" class="count-chip">0条</span>
+        </div>
+        <div id="submission-errors" class="error-box" role="alert" hidden></div>
+        <div id="submission-list" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section id="not-found" class="not-found-card" hidden>
+      <p class="eyebrow">演示链接无效</p>
+      <h1>没有找到这个演示厕所</h1>
+      <p>请返回附近厕所列表，重新选择一个地点。</p>
+      <a class="button button--primary" href="index.html#nearby">返回附近厕所</a>
+    </section>
+  </main>
+</body>
+</html>
